@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/clock-station", "destination": "/games/clock-station.html" },
+    { "source": "/math-runner", "destination": "/games/math-runner.html" },
+    { "source": "/tug-of-war", "destination": "/games/tug-of-war.html" },
+    { "source": "/golf-challenge", "destination": "/games/golf-challenge.html" },
+    { "source": "/vector-skies", "destination": "/games/vector-skies.html" }
+  ]
+}
