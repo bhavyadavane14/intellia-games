@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Intellia360 Games — Think. Play. Level Up.</title>
+  <meta name="description" content="Explore fun, interactive games by Intellia360 that bring curiosity, problem-solving, and learning together. Play Clock Station, Math Runner, Tug of War, Golf Challenge, and Vector Skies.">
+  
+  <!-- Favicon using official Intellia360 Games Logo -->
+  <link rel="icon" type="image/png" href="assets/logo/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo/logo.png">
+
+  <!-- Google Fonts: Outfit for modern headings & Plus Jakarta Sans for refined body copy -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Clean EdTech Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+  <!-- Subtle Light Mathematical & Geometric Background Elements -->
+  <div class="light-math-field" id="mathField" aria-hidden="true">
+    <span class="math-item item-1">π</span>
+    <span class="math-item item-2">∑</span>
+    <span class="math-item item-3">√x</span>
+    <span class="math-item item-4">+</span>
+    <span class="math-item item-5">÷</span>
+    <span class="math-item item-6">×</span>
+    <span class="math-item item-7">=</span>
+    <span class="math-item item-8">∞</span>
+    <span class="math-item item-9">f(x)</span>
+    <span class="math-item item-10">Δ</span>
+    <span class="math-item item-11">2³</span>
+    <span class="math-item item-12">%</span>
+    <div class="geo-decor circle-1"></div>
+    <div class="geo-decor square-1"></div>
+    <div class="geo-decor dot-pattern"></div>
+  </div>
+
+  <!-- Header / Navigation Bar -->
+  <header class="site-header" id="siteHeader">
+    <div class="header-container">
+      <div class="header-left-spacer" aria-hidden="true"></div>
+      <a href="#top" class="brand-link" aria-label="Intellia360 Games Home">
+        <img src="assets/logo/logo.png" alt="Intellia360 Games" class="brand-logo" width="280" height="120">
+      </a>
+      <div class="header-right-actions">
+        <button type="button" class="hamburger-btn" id="navHamburgerBtn" aria-label="Open Games Menu" aria-expanded="false" aria-controls="gamesNavDrawer">
+          <span class="hamburger-box">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+          </span>
+          <span class="hamburger-label">All Games</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Starting Write-up & Arcade Introduction -->
+    <section class="arcade-intro-section" id="intro">
+      <div class="intro-container">
+        <div class="intro-badge">
+          <span class="badge-sparkle">✨</span>
+          <span>Educational Gaming Suite</span>
+        </div>
+        <h1 class="intro-heading">Play, Learn & <span class="highlight-blue">Level Up</span></h1>
+        <p class="intro-description">
+          Welcome to <strong>Intellia360 Games</strong> — where curiosity transforms into adventure and problem-solving becomes second nature. Each interactive game is designed to build intuition in core mathematics, spatial reasoning, physics, and quick arithmetic. Choose your challenge below, step into the arena, and level up your skills!
+        </p>
+        <div class="intro-meta-chips">
+          <span class="meta-chip">🎯 5 Curriculum-Aligned Games</span>
+          <span class="meta-chip">🧠 Logic, Speed & Strategy</span>
+          <span class="meta-chip">⚡ Instant Play • No Downloads</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Game Arcade Section -->
+    <section class="games-section" id="games">
+      <div class="games-container">
+
+        <!-- Section Heading & Subtitle -->
+        <div class="section-header">
+          <div class="section-tag">Arcade Selection</div>
+          <h2 class="section-title">Choose Your Next Adventure</h2>
+          <p class="section-subtitle">
+            Five games. Endless curiosity. Which one will you play first?
+          </p>
+        </div>
+
+        <!-- 5-Game Grid: 3 per row on Desktop (Row 2 centered), 2 on Tablet, 1 on Mobile -->
+        <div class="games-grid" id="gamesGrid">
+
+          <!-- Game 1: Clock Station -->
+          <a href="games/clock-station.html" 
+             class="game-card" 
+             id="cardClockStation"
+             target="_self"
+             data-game="clock-station">
+            <div class="card-inner">
+              <div class="card-image-box">
+                <img src="assets/games/clock-station.jpg" 
+                     alt="Clock Station - A Colorful Time-Learning Adventure" 
+                     class="game-thumbnail" 
+                     loading="lazy">
+                <span class="game-category-tag">Time & Clocks</span>
+              </div>
+              <div class="card-content">
+                <h3 class="game-name">Clock Station</h3>
+                <p class="game-desc">Explore time and challenge your clock-reading skills.</p>
+                <div class="card-action">
+                  <span class="play-btn">
+                    <span>PLAY NOW</span>
+                    <span class="arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Game 2: Math Runner -->
+          <a href="games/math-runner.html" 
+             class="game-card" 
+             id="cardMathRunner"
+             target="_self"
+             data-game="math-runner">
+            <div class="card-inner">
+              <div class="card-image-box">
+                <img src="assets/games/math-runner.jpg" 
+                     alt="Math Runner 3D - Playful Kids Edition" 
+                     class="game-thumbnail" 
+                     loading="lazy">
+                <span class="game-category-tag">Mental Math</span>
+              </div>
+              <div class="card-content">
+                <h3 class="game-name">Math Runner</h3>
+                <p class="game-desc">Run, react, and solve mathematical challenges along the way.</p>
+                <div class="card-action">
+                  <span class="play-btn">
+                    <span>PLAY NOW</span>
+                    <span class="arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Game 3: Tug of War -->
+          <a href="games/tug-of-war.html" 
+             class="game-card" 
+             id="cardTugOfWar"
+             target="_self"
+             data-game="tug-of-war">
+            <div class="card-inner">
+              <div class="card-image-box">
+                <img src="assets/games/tug-of-war.jpg" 
+                     alt="Tug of War - Math Battle" 
+                     class="game-thumbnail" 
+                     loading="lazy">
+                <span class="game-category-tag">Math Battle</span>
+              </div>
+              <div class="card-content">
+                <h3 class="game-name">Tug of War</h3>
+                <p class="game-desc">Put your mathematical skills to the test in a competitive tug-of-war challenge.</p>
+                <div class="card-action">
+                  <span class="play-btn">
+                    <span>PLAY NOW</span>
+                    <span class="arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Game 4: Golf Challenge -->
+          <a href="games/golf-challenge.html" 
+             class="game-card" 
+             id="cardGolfChallenge"
+             target="_self"
+             data-game="golf-challenge">
+            <div class="card-inner">
+              <div class="card-image-box">
+                <img src="assets/games/golf-challenge.jpg" 
+                     alt="Realistic Golf Challenge - A Math-Powered 3D Golf Game" 
+                     class="game-thumbnail" 
+                     loading="lazy">
+                <span class="game-category-tag">Physics & Curves</span>
+              </div>
+              <div class="card-content">
+                <h3 class="game-name">Golf Challenge</h3>
+                <p class="game-desc">Aim carefully, make your move, and take on a fun golf challenge.</p>
+                <div class="card-action">
+                  <span class="play-btn">
+                    <span>PLAY NOW</span>
+                    <span class="arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- Game 5: Vector Skies -->
+          <a href="games/vector-skies.html" 
+             class="game-card" 
+             id="cardVectorSkies"
+             target="_self"
+             data-game="vector-skies">
+            <div class="card-inner">
+              <div class="card-image-box">
+                <img src="assets/games/vector-skies.jpg" 
+                     alt="Vector Skies - 3D Vector Adventure" 
+                     class="game-thumbnail" 
+                     loading="lazy">
+                <span class="game-category-tag">3D Vectors</span>
+              </div>
+              <div class="card-content">
+                <h3 class="game-name">Vector Skies</h3>
+                <p class="game-desc">Explore a world of movement, direction, and exciting challenges.</p>
+                <div class="card-action">
+                  <span class="play-btn">
+                    <span>PLAY NOW</span>
+                    <span class="arrow">→</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Clean White Footer -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="#top" class="footer-brand" aria-label="Intellia360 Games Home">
+          <img src="assets/logo/logo.png" alt="Intellia360 Games" class="footer-logo" width="180" height="78">
+        </a>
+        <p class="footer-tagline">Play. Explore. Discover.</p>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-copyright">&copy; 2026 Intellia360. All rights reserved.</p>
+        <a href="#top" class="back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+          <span>Back to Top</span>
+          <span class="arrow-up" aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hamburger Navigation Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- Games Navigation Slide-out Drawer -->
+  <aside class="games-drawer" id="gamesNavDrawer" aria-label="Games Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <span class="drawer-badge">🎮 Intellia360 Arcade</span>
+        <h2 class="drawer-title">Select a Game</h2>
+      </div>
+      <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Arcade Lobby Home Link -->
+      <a href="#top" class="drawer-home-item" id="drawerHomeLink">
+        <span class="drawer-home-icon">🏠</span>
+        <div class="drawer-home-text">
+          <span class="drawer-home-title">Arcade Lobby (Home)</span>
+          <span class="drawer-home-sub">Overview, write-up & full selection</span>
+        </div>
+      </a>
+
+      <div class="drawer-section-label">All Games (5)</div>
+
+      <ul class="drawer-games-list">
+        <!-- Game 1: Clock Station -->
+        <li>
+          <a href="games/clock-station.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-amber">⏰</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Clock Station</div>
+              <div class="drawer-game-meta">Time & Clocks • Grades K-5</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game 2: Math Runner -->
+        <li>
+          <a href="games/math-runner.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-purple">🏃</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Math Runner</div>
+              <div class="drawer-game-meta">Mental Math & Speed • Grades 1-8</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game 3: Tug of War -->
+        <li>
+          <a href="games/tug-of-war.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-orange">🪢</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Tug of War</div>
+              <div class="drawer-game-meta">2-Player Battle • Addition & Mult.</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game 4: Golf Challenge -->
+        <li>
+          <a href="games/golf-challenge.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-cyan">⛳</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Realistic Golf Challenge</div>
+              <div class="drawer-game-meta">Physics & Curves • Parabolas</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game 5: Vector Skies -->
+        <li>
+          <a href="games/vector-skies.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-blue">🚀</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Vector Skies</div>
+              <div class="drawer-game-meta">3D Vectors • (X, Y, Z) Flight</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="drawer-footer">
+      <p class="drawer-footer-text">Intellia360 Games • Curiosity & Problem Solving</p>
+    </div>
+  </aside>
+
+  <!-- Vanilla JavaScript -->
+  <script src="js/script.js"></script>
+</body>
+</html>

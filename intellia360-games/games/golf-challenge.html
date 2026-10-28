@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Realistic Golf Challenge — Intellia360 Games</title>
+  <meta name="description" content="Play Realistic Golf Challenge by Intellia360 Games. A math-powered 3D golf game featuring parabolas, sine waves, quadratic equations, and 10 challenging courses.">
+  
+  <!-- Favicon using official Intellia360 Games Logo -->
+  <link rel="icon" type="image/png" href="../assets/logo/logo.png">
+  <link rel="apple-touch-icon" href="../assets/logo/logo.png">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body id="top">
+
+  <!-- Game Page Sticky Header with Back Button -->
+  <header class="game-page-header" id="siteHeader">
+    <div class="game-header-container">
+      <a href="../index.html" class="btn-back-arcade" id="backToArcadeBtn" aria-label="Back to Games Arcade">
+        <span class="back-arrow-icon" aria-hidden="true">←</span>
+        <span>Back to Games</span>
+      </a>
+
+      <a href="../index.html" class="game-header-logo-link" aria-label="Intellia360 Games Home">
+        <img src="../assets/logo/logo.png" alt="Intellia360 Games" class="game-header-logo" width="180" height="78">
+      </a>
+
+      <div class="game-header-right-group">
+        <a href="https://realistic-golf-challenge.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-external-play">
+          <span>Play Fullscreen</span>
+          <span class="external-icon" aria-hidden="true">↗</span>
+        </a>
+        <button type="button" class="hamburger-btn" id="navHamburgerBtn" aria-label="Open Games Menu" aria-expanded="false" aria-controls="gamesNavDrawer">
+          <span class="hamburger-box">
+            <span class="hamburger-line line-1"></span>
+            <span class="hamburger-line line-2"></span>
+            <span class="hamburger-line line-3"></span>
+          </span>
+          <span class="hamburger-label">All Games</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="game-detail-main">
+    <div class="game-detail-container">
+
+      <!-- Breadcrumbs -->
+      <nav class="game-breadcrumbs" aria-label="Breadcrumb">
+        <a href="../index.html">Home</a>
+        <span aria-hidden="true">/</span>
+        <a href="../index.html#games">Games</a>
+        <span aria-hidden="true">/</span>
+        <span>Realistic Golf Challenge</span>
+      </nav>
+
+      <!-- Game Introduction & Educational Write-up Card -->
+      <section class="game-intro-card">
+        <div class="game-intro-top">
+          <span class="game-tag-pill tag-cyan">Physics & Curves</span>
+          <span class="meta-chip">Grades 6 - 12 • Algebra & Geometry</span>
+        </div>
+        <h1 class="game-page-title">Realistic Golf Challenge</h1>
+        <p class="game-page-desc">
+          Combine real physics with quadratic mathematics in a breathtaking 3D golfing adventure! In Realistic Golf Challenge, your shots are governed by algebraic equations ($y = ax^2 + bx + c$, sine oscillations, and exponential arcs). Adjust the vertex, tune the curve coefficients, and watch the ball arc over cliffs and water hazards directly into the cup!
+        </p>
+        <div class="game-features-row">
+          <span class="game-feature-pill">⛳ 10 Challenging 3D Courses</span>
+          <span class="game-feature-pill">📐 Interactive Equation Box</span>
+          <span class="game-feature-pill">🌊 Parabolas & Sine Curves</span>
+          <span class="game-feature-pill">✨ Auto-Fill Winning Equation Assistant</span>
+        </div>
+      </section>
+
+      <!-- Interactive Game Player Arena -->
+      <section class="game-player-section">
+        <div class="game-player-frame-box">
+          <div class="player-control-bar">
+            <div class="player-status-badge">
+              <span class="status-dot"></span>
+              <span>Game Active • Ready to Play</span>
+            </div>
+            <div class="player-actions">
+              <a href="../index.html" class="btn-player-action">
+                <span>← Exit Game</span>
+              </a>
+              <button type="button" class="btn-player-action" id="fullscreenToggleBtn" onclick="toggleIframeFullscreen()">
+                <span>⛶ Expand Player</span>
+              </button>
+              <a href="https://realistic-golf-challenge.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-player-action">
+                <span>Open in New Tab ↗</span>
+              </a>
+            </div>
+          </div>
+
+          <!-- Embedded Game Player -->
+          <div class="game-iframe-wrapper" id="iframeWrapper">
+            <iframe src="https://realistic-golf-challenge.vercel.app/" 
+                    class="game-iframe" 
+                    id="gameIframe"
+                    title="Realistic Golf Challenge Game"
+                    allow="fullscreen; autoplay; gamepad">
+            </iframe>
+          </div>
+        </div>
+      </section>
+
+      <!-- Educational Guide & How to Play Grid -->
+      <section class="game-guide-grid">
+        <div class="guide-box">
+          <h2 class="guide-box-title">
+            <span class="guide-icon">🎮</span>
+            <span>How to Play & Controls</span>
+          </h2>
+          <ul class="guide-list">
+            <li><strong>Analyze the Course:</strong> Survey the distance to the pin, elevation changes, cliffs, and obstacles.</li>
+            <li><strong>Input Equation Coefficients:</strong> Edit the quadratic formula $y = a(x - h)^2 + k$ in the Equation Box to calculate the shot's trajectory.</li>
+            <li><strong>Take Your Swing:</strong> Fire the shot to observe the projectile physics in real time. Refine your equation until you sink a hole-in-one!</li>
+          </ul>
+        </div>
+
+        <div class="guide-box">
+          <h2 class="guide-box-title">
+            <span class="guide-icon">🎯</span>
+            <span>Key Mathematical Concepts</span>
+          </h2>
+          <ul class="guide-list">
+            <li><strong>Parabolic Trajectories:</strong> Understand how gravity creates symmetrical quadratic parabolas with distinct vertices and zeros.</li>
+            <li><strong>Vertex Form & Transformations:</strong> Learn how altering $a$ changes steepness, and $(h, k)$ moves the curve's peak.</li>
+            <li><strong>Trigonometric & Exponential Functions:</strong> Unlock advanced levels requiring sine waves to bypass undulating canyon hills.</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Quick Switcher to Other 4 Games -->
+      <section class="other-games-section">
+        <div class="other-games-header">
+          <h2 class="other-games-title">Explore More Games</h2>
+          <a href="../index.html#games" class="btn-back-arcade">
+            <span class="back-arrow-icon" aria-hidden="true">←</span>
+            <span>All Games</span>
+          </a>
+        </div>
+        <div class="other-games-grid">
+          <a href="clock-station.html" class="mini-game-card">
+            <img src="../assets/games/clock-station.jpg" alt="Clock Station" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">Clock Station</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
+          <a href="math-runner.html" class="mini-game-card">
+            <img src="../assets/games/math-runner.jpg" alt="Math Runner" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">Math Runner</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
+          <a href="tug-of-war.html" class="mini-game-card">
+            <img src="../assets/games/tug-of-war.jpg" alt="Tug of War" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">Tug of War</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
+          <a href="vector-skies.html" class="mini-game-card">
+            <img src="../assets/games/vector-skies.jpg" alt="Vector Skies" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">Vector Skies</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Clean White Footer -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="footer-container">
+      <div class="footer-left">
+        <a href="../index.html" class="footer-brand" aria-label="Intellia360 Games Home">
+          <img src="../assets/logo/logo.png" alt="Intellia360 Games" class="footer-logo" width="180" height="78">
+        </a>
+        <p class="footer-tagline">Play. Explore. Discover.</p>
+      </div>
+
+      <div class="footer-right">
+        <p class="footer-copyright">&copy; 2026 Intellia360. All rights reserved.</p>
+        <a href="#top" class="back-to-top" id="backToTopBtn" aria-label="Scroll back to top">
+          <span>Back to Top</span>
+          <span class="arrow-up" aria-hidden="true">↑</span>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Hamburger Navigation Drawer Backdrop -->
+  <div class="drawer-backdrop" id="drawerBackdrop" aria-hidden="true"></div>
+
+  <!-- Games Navigation Slide-out Drawer -->
+  <aside class="games-drawer" id="gamesNavDrawer" aria-label="Games Menu" aria-hidden="true">
+    <div class="drawer-header">
+      <div class="drawer-title-group">
+        <span class="drawer-badge">🎮 Intellia360 Arcade</span>
+        <h2 class="drawer-title">Select a Game</h2>
+      </div>
+      <button type="button" class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">✕</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Arcade Lobby Home Link -->
+      <a href="../index.html#top" class="drawer-home-item" id="drawerHomeLink">
+        <span class="drawer-home-icon">🏠</span>
+        <div class="drawer-home-text">
+          <span class="drawer-home-title">Arcade Lobby (Home)</span>
+          <span class="drawer-home-sub">Overview, write-up & full selection</span>
+        </div>
+      </a>
+
+      <div class="drawer-section-label">All Games (5)</div>
+
+      <ul class="drawer-games-list">
+        <!-- Game 1: Clock Station -->
+        <li>
+          <a href="clock-station.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-amber">⏰</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Clock Station</div>
+              <div class="drawer-game-meta">Time & Clocks • Grades K-5</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game 2: Math Runner -->
+        <li>
+          <a href="math-runner.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-purple">🏃</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Math Runner</div>
+              <div class="drawer-game-meta">Mental Math & Speed • Grades 1-8</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game 3: Tug of War -->
+        <li>
+          <a href="tug-of-war.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-orange">🪢</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Tug of War</div>
+              <div class="drawer-game-meta">2-Player Battle • Addition & Mult.</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game 4: Golf Challenge -->
+        <li>
+          <a href="golf-challenge.html" class="drawer-game-link is-active">
+            <div class="drawer-game-icon icon-cyan">⛳</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">
+                Realistic Golf Challenge
+                <span class="drawer-active-tag">Playing</span>
+              </div>
+              <div class="drawer-game-meta">Physics & Curves • Parabolas</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game 5: Vector Skies -->
+        <li>
+          <a href="vector-skies.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-blue">🚀</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">Vector Skies</div>
+              <div class="drawer-game-meta">3D Vectors • (X, Y, Z) Flight</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="drawer-footer">
+      <p class="drawer-footer-text">Intellia360 Games • Curiosity & Problem Solving</p>
+    </div>
+  </aside>
+
+  <!-- Global Shared Script for Drawer & Interactive Support -->
+  <script src="../js/script.js"></script>
+
+  <!-- Script for Fullscreen Support -->
+  <script>
+    function toggleIframeFullscreen() {
+      const wrapper = document.getElementById('iframeWrapper');
+      if (!document.fullscreenElement) {
+        if (wrapper.requestFullscreen) {
+          wrapper.requestFullscreen();
+        } else if (wrapper.webkitRequestFullscreen) {
+          wrapper.webkitRequestFullscreen();
+        }
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
+      }
+    }
+  </script>
+</body>
+</html>
