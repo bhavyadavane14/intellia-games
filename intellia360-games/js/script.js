@@ -1,6 +1,6 @@
 /**
  * Intellia360 Games — Official Educational Landing Page Script
- * Vanilla JavaScript for navigation reliability, accessible card clicks, and smooth scrolling
+ * Vanilla JavaScript for navigation reliability, accessible card clicks, smooth scrolling, and dark mode
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -186,5 +186,87 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* --------------------------------------------------------------------------
+     6. Dark Mode & Theme Management (Default: Dark Mode)
+     -------------------------------------------------------------------------- */
+  const THEME_STORAGE_KEY = 'intellia-theme';
+  const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
+
+  const getSavedTheme = () => {
+    try {
+      const saved = localStorage.getItem(THEME_STORAGE_KEY);
+      if (saved === 'light' || saved === 'dark') return saved;
+    } catch (e) {
+      /* ignore storage restriction */
+    }
+    return 'dark'; // Default to Dark Mode across the platform
+  };
+
+  const setPlatformTheme = (theme) => {
+    document.documentElement.setAttribute('data-theme', theme);
+    const isDark = theme === 'dark';
+
+    // Swap logo between dark and light variants if available
+    const logos = document.querySelectorAll('.brand-logo, .game-header-logo, .footer-logo');
+    logos.forEach((logo) => {
+      const src = logo.getAttribute('src') || '';
+      if (isDark) {
+        if (!src.includes('logo-dark.png')) {
+          logo.setAttribute('src', src.replace('logo.png', 'logo-dark.png'));
+        }
+      } else {
+        if (src.includes('logo-dark.png')) {
+          logo.setAttribute('src', src.replace('logo-dark.png', 'logo.png'));
+        }
+      }
+    });
+
+    themeToggleBtns.forEach((btn) => {
+      btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+      btn.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      btn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+
+    try {
+      localStorage.setItem(THEME_STORAGE_KEY, theme);
+    } catch (e) {
+      /* ignore */
+    }
+  };
+
+  // Initialize theme
+  const initialTheme = getSavedTheme();
+  setPlatformTheme(initialTheme);
+
+  themeToggleBtns.forEach((btn) => {
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const nextTheme = current === 'dark' ? 'light' : 'dark';
+      setPlatformTheme(nextTheme);
+    });
+  });
+
 });
 
+/* --------------------------------------------------------------------------
+   7. Interactive Iframe Fullscreen Toggle Helper
+   -------------------------------------------------------------------------- */
+window.toggleIframeFullscreen = () => {
+  const iframeWrapper = document.getElementById('iframeWrapper') || document.querySelector('.game-iframe-wrapper') || document.getElementById('gameIframe');
+  if (!iframeWrapper) return;
+
+  if (!document.fullscreenElement) {
+    if (iframeWrapper.requestFullscreen) {
+      iframeWrapper.requestFullscreen();
+    } else if (iframeWrapper.webkitRequestFullscreen) {
+      iframeWrapper.webkitRequestFullscreen();
+    } else if (iframeWrapper.msRequestFullscreen) {
+      iframeWrapper.msRequestFullscreen();
+    }
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    }
+  }
+};
