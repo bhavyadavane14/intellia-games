@@ -13,14 +13,15 @@
     })();
   </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Realistic Golf Challenge — Intellia360 Games</title>
-  <meta name="description" content="Play Realistic Golf Challenge by Intellia360 Games. A math-powered 3D golf game featuring parabolas, sine waves, quadratic equations, and 10 challenging courses.">
+  <title>Golf Challenge — Intellia360 Games</title>
+  <meta name="description" content="Aim carefully, make your move, and take on a fun golf challenge. Play Golf Challenge by Intellia360 Games.">
   
   <!-- Favicon using official Intellia360 Games Logo -->
   <link rel="icon" type="image/png" href="../assets/logo/logo.png">
   <link rel="apple-touch-icon" href="../assets/logo/logo.png">
 
   <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
@@ -29,7 +30,7 @@
 </head>
 <body id="top">
 
-  <!-- Game Page Sticky Header with Back Button -->
+  <!-- Game Page Sticky Header with Prominent Back Button -->
   <header class="game-page-header" id="siteHeader">
     <div class="game-header-container">
       <a href="../index.html" class="btn-back-arcade" id="backToArcadeBtn" aria-label="Back to Games Arcade">
@@ -42,7 +43,7 @@
       </a>
 
       <div class="game-header-right-group">
-        <a href="https://realistic-golf-challenge.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-external-play">
+        <a href="https://golf-challenge-eta.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-external-play">
           <span>Play Fullscreen</span>
           <span class="external-icon" aria-hidden="true">↗</span>
         </a>
@@ -72,24 +73,24 @@
         <span aria-hidden="true">/</span>
         <a href="../index.html#games">Games</a>
         <span aria-hidden="true">/</span>
-        <span>Realistic Golf Challenge</span>
+        <span>Golf Challenge</span>
       </nav>
 
       <!-- Game Introduction & Educational Write-up Card -->
       <section class="game-intro-card">
         <div class="game-intro-top">
           <span class="game-tag-pill tag-cyan">Physics & Curves</span>
-          <span class="meta-chip">Grades 6 - 12 • Algebra & Geometry</span>
+          <span class="meta-chip">Grades 6 - 12 • Quadratic Curves</span>
         </div>
         <h1 class="game-page-title">Realistic Golf Challenge</h1>
         <p class="game-page-desc">
-          Combine real physics with quadratic mathematics in a breathtaking 3D golfing adventure! In Realistic Golf Challenge, your shots are governed by algebraic equations ($y = ax^2 + bx + c$, sine oscillations, and exponential arcs). Adjust the vertex, tune the curve coefficients, and watch the ball arc over cliffs and water hazards directly into the cup!
+          Step onto the green and master the mathematics of projectile motion! Realistic Golf Challenge combines stunning 3D golf physics with quadratic equation modeling. Calculate launch velocity, angle of elevation, and ball trajectories ($y = ax^2 + bx + c$) to sink precision putts and eagle shots across diverse terrain.
         </p>
         <div class="game-features-row">
-          <span class="game-feature-pill">⛳ 10 Challenging 3D Courses</span>
-          <span class="game-feature-pill">📐 Interactive Equation Box</span>
-          <span class="game-feature-pill">🌊 Parabolas & Sine Curves</span>
-          <span class="game-feature-pill">✨ Auto-Fill Winning Equation Assistant</span>
+          <span class="game-feature-pill">⛳ 3D Course Modeling & Contours</span>
+          <span class="game-feature-pill">📐 Parabolic Trajectory Physics</span>
+          <span class="game-feature-pill">🏌️ Wind, Spin & Friction Simulation</span>
+          <span class="game-feature-pill">🎯 Multi-Hole Tournament Play</span>
         </div>
       </section>
 
@@ -108,7 +109,7 @@
               <button type="button" class="btn-player-action" id="fullscreenToggleBtn" onclick="toggleIframeFullscreen()">
                 <span>⛶ Expand Player</span>
               </button>
-              <a href="https://realistic-golf-challenge.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-player-action">
+              <a href="https://golf-challenge-eta.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-player-action">
                 <span>Open in New Tab ↗</span>
               </a>
             </div>
@@ -116,10 +117,10 @@
 
           <!-- Embedded Game Player -->
           <div class="game-iframe-wrapper" id="iframeWrapper">
-            <iframe src="https://realistic-golf-challenge.vercel.app/" 
+            <iframe src="https://golf-challenge-eta.vercel.app/" 
                     class="game-iframe" 
                     id="gameIframe"
-                    title="Realistic Golf Challenge Game"
+                    title="Golf Challenge Game"
                     allow="fullscreen; autoplay; gamepad">
             </iframe>
           </div>
@@ -134,9 +135,9 @@
             <span>How to Play & Controls</span>
           </h2>
           <ul class="guide-list">
-            <li><strong>Analyze the Course:</strong> Survey the distance to the pin, elevation changes, cliffs, and obstacles.</li>
-            <li><strong>Input Equation Coefficients:</strong> Edit the quadratic formula $y = a(x - h)^2 + k$ in the Equation Box to calculate the shot's trajectory.</li>
-            <li><strong>Take Your Swing:</strong> Fire the shot to observe the projectile physics in real time. Refine your equation until you sink a hole-in-one!</li>
+            <li><strong>Inspect the Green:</strong> Survey the distance to the cup, elevation change, and fairway contours.</li>
+            <li><strong>Set Power & Angle:</strong> Adjust your swing power slider and aim trajectory angle to calculate the optimal parabolic arc.</li>
+            <li><strong>Swing & Sink:</strong> Execute your shot and observe the ball physics. Sink the putt in as few strokes as possible!</li>
           </ul>
         </div>
 
@@ -146,14 +147,14 @@
             <span>Key Mathematical Concepts</span>
           </h2>
           <ul class="guide-list">
-            <li><strong>Parabolic Trajectories:</strong> Understand how gravity creates symmetrical quadratic parabolas with distinct vertices and zeros.</li>
-            <li><strong>Vertex Form & Transformations:</strong> Learn how altering $a$ changes steepness, and $(h, k)$ moves the curve's peak.</li>
-            <li><strong>Trigonometric & Exponential Functions:</strong> Unlock advanced levels requiring sine waves to bypass undulating canyon hills.</li>
+            <li><strong>Quadratic Parabolic Modeling:</strong> Visualize how gravity ($g$) and initial velocity ($v_0$) shape the standard parabola $y = ax^2 + bx + c$.</li>
+            <li><strong>Trigonometric Angle Resolution:</strong> Resolve launch velocity vectors into orthogonal horizontal ($v_x = v\cos\theta$) and vertical ($v_y = v\sin\theta$) components.</li>
+            <li><strong>Optimization & Gradient Slope:</strong> Analyze terrain elevation gradients and friction coefficients to calculate optimal rolling distance.</li>
           </ul>
         </div>
       </section>
 
-      <!-- Quick Switcher to Other 4 Games -->
+      <!-- Quick Switcher to Other 9 Games -->
       <section class="other-games-section">
         <div class="other-games-header">
           <h2 class="other-games-title">Explore More Games</h2>
@@ -191,13 +192,48 @@
               <span class="mini-cta">Play Now →</span>
             </div>
           </a>
+          <a href="math-merge.html" class="mini-game-card">
+            <img src="../assets/games/math-merge.jpg" alt="MathMerge" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">MathMerge</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
+          <a href="times-table-tower.html" class="mini-game-card">
+            <img src="../assets/games/times-table-tower.jpg" alt="Times Table Tower" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">Times Table Tower</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
+          <a href="pizza-fraction-slicer.html" class="mini-game-card">
+            <img src="../assets/games/pizza-fraction-slicer.jpg" alt="Pizza Fraction Adventure" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">Pizza Fraction Adventure</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
+          <a href="catch-the-correct-answer.html" class="mini-game-card">
+            <img src="../assets/games/catch-the-correct-answer.jpg" alt="Catch the Correct Answer" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">Catch the Correct Answer</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
+          <a href="math-buggy-rush.html" class="mini-game-card">
+            <img src="../assets/games/math-buggy-rush.jpg" alt="Math Buggy Rush" class="mini-thumbnail" loading="lazy">
+            <div class="mini-content">
+              <h3 class="mini-title">Math Buggy Rush</h3>
+              <span class="mini-cta">Play Now →</span>
+            </div>
+          </a>
         </div>
       </section>
 
     </div>
   </main>
 
-  <!-- Clean White Footer -->
+  <!-- Footer -->
   <footer class="site-footer" id="siteFooter">
     <div class="footer-container">
       <div class="footer-left">
@@ -246,52 +282,58 @@
         </div>
       </a>
 
-      <div class="drawer-section-label">All Games (5)</div>
+      <div class="drawer-section-label">All Games (10)</div>
 
       <ul class="drawer-games-list">
-        <!-- Game 1: Clock Station -->
+        <!-- Game: Clock Station -->
         <li>
           <a href="clock-station.html" class="drawer-game-link">
             <div class="drawer-game-icon icon-amber">⏰</div>
             <div class="drawer-game-info">
-              <div class="drawer-game-title">Clock Station</div>
+              <div class="drawer-game-title">
+                Clock Station
+              </div>
               <div class="drawer-game-meta">Time & Clocks • Grades K-5</div>
             </div>
             <span class="drawer-game-arrow" aria-hidden="true">→</span>
           </a>
         </li>
 
-        <!-- Game 2: Math Runner -->
+        <!-- Game: Math Runner -->
         <li>
           <a href="math-runner.html" class="drawer-game-link">
             <div class="drawer-game-icon icon-purple">🏃</div>
             <div class="drawer-game-info">
-              <div class="drawer-game-title">Math Runner</div>
+              <div class="drawer-game-title">
+                Math Runner
+              </div>
               <div class="drawer-game-meta">Mental Math & Speed • Grades 1-8</div>
             </div>
             <span class="drawer-game-arrow" aria-hidden="true">→</span>
           </a>
         </li>
 
-        <!-- Game 3: Tug of War -->
+        <!-- Game: Tug of War -->
         <li>
           <a href="tug-of-war.html" class="drawer-game-link">
             <div class="drawer-game-icon icon-orange">🪢</div>
             <div class="drawer-game-info">
-              <div class="drawer-game-title">Tug of War</div>
+              <div class="drawer-game-title">
+                Tug of War
+              </div>
               <div class="drawer-game-meta">2-Player Battle • Addition & Mult.</div>
             </div>
             <span class="drawer-game-arrow" aria-hidden="true">→</span>
           </a>
         </li>
 
-        <!-- Game 4: Golf Challenge -->
+        <!-- Game: Golf Challenge -->
         <li>
           <a href="golf-challenge.html" class="drawer-game-link is-active">
             <div class="drawer-game-icon icon-cyan">⛳</div>
             <div class="drawer-game-info">
               <div class="drawer-game-title">
-                Realistic Golf Challenge
+                Golf Challenge
                 <span class="drawer-active-tag">Playing</span>
               </div>
               <div class="drawer-game-meta">Physics & Curves • Parabolas</div>
@@ -300,13 +342,85 @@
           </a>
         </li>
 
-        <!-- Game 5: Vector Skies -->
+        <!-- Game: Vector Skies -->
         <li>
           <a href="vector-skies.html" class="drawer-game-link">
             <div class="drawer-game-icon icon-blue">🚀</div>
             <div class="drawer-game-info">
-              <div class="drawer-game-title">Vector Skies</div>
+              <div class="drawer-game-title">
+                Vector Skies
+              </div>
               <div class="drawer-game-meta">3D Vectors • (X, Y, Z) Flight</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game: MathMerge -->
+        <li>
+          <a href="math-merge.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-indigo">🧩</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">
+                MathMerge
+              </div>
+              <div class="drawer-game-meta">Number Puzzle • Powers of 2</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game: Times Table Tower -->
+        <li>
+          <a href="times-table-tower.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-rose">🏰</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">
+                Times Table Tower
+              </div>
+              <div class="drawer-game-meta">Arithmetic Quest • 100 Levels</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game: Pizza Fraction Adventure -->
+        <li>
+          <a href="pizza-fraction-slicer.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-green">🍕</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">
+                Pizza Fraction Adventure
+              </div>
+              <div class="drawer-game-meta">Fractions & Slicing • Visual Math</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game: Catch the Correct Answer -->
+        <li>
+          <a href="catch-the-correct-answer.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-pink">🎮</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">
+                Catch the Correct Answer
+              </div>
+              <div class="drawer-game-meta">Retro Arcade • Speed Arithmetic</div>
+            </div>
+            <span class="drawer-game-arrow" aria-hidden="true">→</span>
+          </a>
+        </li>
+
+        <!-- Game: Math Buggy Rush -->
+        <li>
+          <a href="math-buggy-rush.html" class="drawer-game-link">
+            <div class="drawer-game-icon icon-emerald">🏎️</div>
+            <div class="drawer-game-info">
+              <div class="drawer-game-title">
+                Math Buggy Rush
+              </div>
+              <div class="drawer-game-meta">3D Kart Racing • Speedway Grand Prix</div>
             </div>
             <span class="drawer-game-arrow" aria-hidden="true">→</span>
           </a>
@@ -326,6 +440,7 @@
   <script>
     function toggleIframeFullscreen() {
       const wrapper = document.getElementById('iframeWrapper');
+      if (!wrapper) return;
       if (!document.fullscreenElement) {
         if (wrapper.requestFullscreen) {
           wrapper.requestFullscreen();

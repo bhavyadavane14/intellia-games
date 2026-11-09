@@ -6,6 +6,13 @@
     { "source": "/math-runner", "destination": "/games/math-runner.html" },
     { "source": "/tug-of-war", "destination": "/games/tug-of-war.html" },
     { "source": "/golf-challenge", "destination": "/games/golf-challenge.html" },
-    { "source": "/vector-skies", "destination": "/games/vector-skies.html" }
+    { "source": "/vector-skies", "destination": "/games/vector-skies.html" },
+    { "source": "/math-merge", "destination": "/games/math-merge.html" },
+    { "source": "/times-table-tower", "destination": "/games/times-table-tower.html" },
+    { "source": "/pizza-fraction-slicer", "destination": "/games/pizza-fraction-slicer.html" },
+    { "source": "/catch-the-correct-answer", "destination": "/games/catch-the-correct-answer.html" },
+    { "source": "/math-buggy-rush", "destination": "/games/math-buggy-rush.html" },
+    { "source": "/car-game", "destination": "/games/math-buggy-rush.html" },
+    { "source": "/car-game-omega-weld", "destination": "/games/math-buggy-rush.html" }
   ]
 }
