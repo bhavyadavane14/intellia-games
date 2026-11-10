@@ -1536,6 +1536,169 @@ a {
   color: var(--intellia-blue);
 }
 
+/* --------------------------------------------------------------------------
+   Game Theme Definitions & Color Accents per Game
+   -------------------------------------------------------------------------- */
+.theme-amber   { --game-accent: #fbbf24; --game-accent-hover: #f59e0b; --game-border: rgba(251, 191, 36, 0.45); --game-bg: rgba(251, 191, 36, 0.12); --game-glow: rgba(251, 191, 36, 0.35); }
+.theme-purple  { --game-accent: #c084fc; --game-accent-hover: #a855f7; --game-border: rgba(192, 132, 252, 0.45); --game-bg: rgba(192, 132, 252, 0.12); --game-glow: rgba(192, 132, 252, 0.35); }
+.theme-orange  { --game-accent: #fb923c; --game-accent-hover: #f97316; --game-border: rgba(251, 146, 60, 0.45); --game-bg: rgba(251, 146, 60, 0.12); --game-glow: rgba(251, 146, 60, 0.35); }
+.theme-cyan    { --game-accent: #22d3ee; --game-accent-hover: #06b6d4; --game-border: rgba(34, 211, 238, 0.45); --game-bg: rgba(34, 211, 238, 0.12); --game-glow: rgba(34, 211, 238, 0.35); }
+.theme-blue    { --game-accent: #38bdf8; --game-accent-hover: #0284c7; --game-border: rgba(56, 189, 248, 0.45); --game-bg: rgba(56, 189, 248, 0.12); --game-glow: rgba(56, 189, 248, 0.35); }
+.theme-indigo  { --game-accent: #a5b4fc; --game-accent-hover: #818cf8; --game-border: rgba(165, 180, 252, 0.45); --game-bg: rgba(165, 180, 252, 0.12); --game-glow: rgba(165, 180, 252, 0.35); }
+.theme-rose    { --game-accent: #fb7185; --game-accent-hover: #f43f5e; --game-border: rgba(251, 113, 133, 0.45); --game-bg: rgba(251, 113, 133, 0.12); --game-glow: rgba(251, 113, 133, 0.35); }
+.theme-green   { --game-accent: #4ade80; --game-accent-hover: #22c55e; --game-border: rgba(74, 222, 128, 0.45); --game-bg: rgba(74, 222, 128, 0.12); --game-glow: rgba(74, 222, 128, 0.35); }
+.theme-pink    { --game-accent: #f472b6; --game-accent-hover: #ec4899; --game-border: rgba(244, 114, 182, 0.45); --game-bg: rgba(244, 114, 182, 0.12); --game-glow: rgba(244, 114, 182, 0.35); }
+.theme-emerald { --game-accent: #34d399; --game-accent-hover: #10b981; --game-border: rgba(52, 211, 153, 0.45); --game-bg: rgba(52, 211, 153, 0.12); --game-glow: rgba(52, 211, 153, 0.35); }
+
+[data-theme="light"] .theme-amber   { --game-accent: #b45309; --game-accent-hover: #92400e; --game-border: #fcd34d; --game-bg: #fef3c7; --game-glow: rgba(180, 83, 9, 0.2); }
+[data-theme="light"] .theme-purple  { --game-accent: #7e22ce; --game-accent-hover: #6b21a8; --game-border: #d8b4fe; --game-bg: #f3e8ff; --game-glow: rgba(126, 34, 206, 0.2); }
+[data-theme="light"] .theme-orange  { --game-accent: #c2410c; --game-accent-hover: #9a3412; --game-border: #fdba74; --game-bg: #ffedd5; --game-glow: rgba(194, 65, 12, 0.2); }
+[data-theme="light"] .theme-cyan    { --game-accent: #0f766e; --game-accent-hover: #115e59; --game-border: #5eead4; --game-bg: #ccfbf1; --game-glow: rgba(15, 118, 110, 0.2); }
+[data-theme="light"] .theme-blue    { --game-accent: #0369a1; --game-accent-hover: #075985; --game-border: #7dd3fc; --game-bg: #e0f2fe; --game-glow: rgba(3, 105, 161, 0.2); }
+[data-theme="light"] .theme-indigo  { --game-accent: #4338ca; --game-accent-hover: #3730a3; --game-border: #a5b4fc; --game-bg: #e0e7ff; --game-glow: rgba(67, 56, 202, 0.2); }
+[data-theme="light"] .theme-rose    { --game-accent: #be123c; --game-accent-hover: #9f1239; --game-border: #fda4af; --game-bg: #ffe4e6; --game-glow: rgba(190, 18, 60, 0.2); }
+[data-theme="light"] .theme-green   { --game-accent: #15803d; --game-accent-hover: #166534; --game-border: #86efac; --game-bg: #dcfce7; --game-glow: rgba(21, 128, 61, 0.2); }
+[data-theme="light"] .theme-pink    { --game-accent: #be185d; --game-accent-hover: #9d174d; --game-border: #f9a8d4; --game-bg: #fce7f3; --game-glow: rgba(190, 24, 93, 0.2); }
+[data-theme="light"] .theme-emerald { --game-accent: #065f46; --game-accent-hover: #064e3b; --game-border: #6ee7b7; --game-bg: #d1fae5; --game-glow: rgba(6, 95, 70, 0.2); }
+
+/* Themed Header Back Button */
+.btn-back-arcade.theme-amber,
+.btn-back-arcade.theme-purple,
+.btn-back-arcade.theme-orange,
+.btn-back-arcade.theme-cyan,
+.btn-back-arcade.theme-blue,
+.btn-back-arcade.theme-indigo,
+.btn-back-arcade.theme-rose,
+.btn-back-arcade.theme-green,
+.btn-back-arcade.theme-pink,
+.btn-back-arcade.theme-emerald {
+  border-color: var(--game-border);
+}
+
+.btn-back-arcade.theme-amber .back-arrow-icon,
+.btn-back-arcade.theme-purple .back-arrow-icon,
+.btn-back-arcade.theme-orange .back-arrow-icon,
+.btn-back-arcade.theme-cyan .back-arrow-icon,
+.btn-back-arcade.theme-blue .back-arrow-icon,
+.btn-back-arcade.theme-indigo .back-arrow-icon,
+.btn-back-arcade.theme-rose .back-arrow-icon,
+.btn-back-arcade.theme-green .back-arrow-icon,
+.btn-back-arcade.theme-pink .back-arrow-icon,
+.btn-back-arcade.theme-emerald .back-arrow-icon {
+  color: var(--game-accent);
+}
+
+.btn-back-arcade.theme-amber:hover,
+.btn-back-arcade.theme-purple:hover,
+.btn-back-arcade.theme-orange:hover,
+.btn-back-arcade.theme-cyan:hover,
+.btn-back-arcade.theme-blue:hover,
+.btn-back-arcade.theme-indigo:hover,
+.btn-back-arcade.theme-rose:hover,
+.btn-back-arcade.theme-green:hover,
+.btn-back-arcade.theme-pink:hover,
+.btn-back-arcade.theme-emerald:hover {
+  border-color: var(--game-accent);
+  color: var(--game-accent);
+  background: var(--game-bg);
+  box-shadow: 0 4px 14px var(--game-glow);
+}
+
+/* Themed Player Control Bar Small Back Button */
+.btn-player-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  background: var(--game-bg, var(--bg-surface-elevated));
+  border: 1.5px solid var(--game-border, var(--border-light));
+  border-radius: var(--radius-md);
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--game-accent, var(--text-dark));
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-player-back .back-arrow-icon {
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--game-accent);
+  transition: transform var(--transition-fast);
+}
+
+.btn-player-back:hover {
+  background: var(--game-bg);
+  border-color: var(--game-accent);
+  color: var(--game-accent-hover);
+  box-shadow: 0 4px 14px var(--game-glow);
+  transform: translateX(-2px);
+}
+
+.btn-player-back:hover .back-arrow-icon {
+  transform: translateX(-2px);
+}
+
+/* Themed Floating Small Back Button (Overlay on Game Frame) */
+.floating-back-btn {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.38rem 0.85rem;
+  background: rgba(15, 23, 42, 0.82);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid var(--game-border, rgba(255, 255, 255, 0.15));
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--game-accent, #ffffff);
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.45);
+  transition: all var(--transition-fast);
+  opacity: 0.92;
+  user-select: none;
+}
+
+.floating-back-btn .back-arrow-icon {
+  font-size: 0.95rem;
+  line-height: 1;
+  color: var(--game-accent, #ffffff);
+  transition: transform var(--transition-fast);
+}
+
+.floating-back-btn:hover {
+  opacity: 1;
+  background: rgba(15, 23, 42, 0.95);
+  border-color: var(--game-accent);
+  color: #ffffff;
+  box-shadow: 0 4px 16px var(--game-glow, rgba(0, 0, 0, 0.6));
+  transform: translateX(-2px);
+}
+
+.floating-back-btn:hover .back-arrow-icon {
+  transform: translateX(-2px);
+}
+
+[data-theme="light"] .floating-back-btn {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--game-accent);
+  border-color: var(--game-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .floating-back-btn:hover {
+  background: #ffffff;
+  color: var(--game-accent-hover);
+}
+
 .game-iframe-wrapper {
   position: relative;
   width: 100%;

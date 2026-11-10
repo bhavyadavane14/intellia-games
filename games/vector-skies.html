@@ -33,7 +33,7 @@
   <!-- Game Page Sticky Header with Prominent Back Button -->
   <header class="game-page-header" id="siteHeader">
     <div class="game-header-container">
-      <a href="../index.html" class="btn-back-arcade" id="backToArcadeBtn" aria-label="Back to Games Arcade">
+      <a href="../index.html" class="btn-back-arcade theme-blue" id="backToArcadeBtn" aria-label="Back to Games Arcade">
         <span class="back-arrow-icon" aria-hidden="true">←</span>
         <span>Back to Games</span>
       </a>
@@ -43,7 +43,7 @@
       </a>
 
       <div class="game-header-right-group">
-        <a href="https://vector-lemon-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-external-play">
+        <a href="https://vector-lemon-five.vercel.app/" target="_self" class="btn-external-play">
           <span>Play Fullscreen</span>
           <span class="external-icon" aria-hidden="true">↗</span>
         </a>
@@ -103,20 +103,23 @@
               <span>Game Active • Ready to Play</span>
             </div>
             <div class="player-actions">
-              <a href="../index.html" class="btn-player-action">
-                <span>← Exit Game</span>
+              <a href="../index.html" class="btn-player-back theme-blue" aria-label="Back to Games">
+                <span class="back-arrow-icon" aria-hidden="true">←</span>
+                <span>Back to Games</span>
               </a>
               <button type="button" class="btn-player-action" id="fullscreenToggleBtn" onclick="toggleIframeFullscreen()">
                 <span>⛶ Expand Player</span>
               </button>
-              <a href="https://vector-lemon-five.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn-player-action">
-                <span>Open in New Tab ↗</span>
-              </a>
             </div>
           </div>
 
           <!-- Embedded Game Player -->
           <div class="game-iframe-wrapper" id="iframeWrapper">
+            <!-- Small floating back button on top of game -->
+            <a href="../index.html" class="floating-back-btn theme-blue" aria-label="Back to Games Arcade" title="Back to Games Arcade">
+              <span class="back-arrow-icon" aria-hidden="true">←</span>
+              <span>Back</span>
+            </a>
             <iframe src="https://vector-lemon-five.vercel.app/" 
                     class="game-iframe" 
                     id="gameIframe"
