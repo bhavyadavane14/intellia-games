@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <base href="https://math-runner-murex.vercel.app/">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Math Runner 3D — Playful Kids Edition</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Fredoka & Baloo 2 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;700;800;900&family=Fredoka:wght@400;600;700;800&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+
+  <style>body{color:#1e293b;-webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent;background:linear-gradient(#e6f3ff 0%,#d4e8ff 50%,#faf5ff 100%);margin:0;font-family:Fredoka,cursive,sans-serif;overflow:hidden}canvas{width:100vw;height:100vh;display:block}.disney-font{font-family:"Baloo 2",cursive,sans-serif;font-weight:800}.bubbly-btn{transition:all .15s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;box-shadow:0 6px #0000001f,0 10px 20px #00000014}.bubbly-btn:after{content:"";background:linear-gradient(90deg,#0000,#ffffff59,#0000);width:50%;height:100%;transition:none;position:absolute;top:0;left:-100%;transform:skew(-20deg)}.bubbly-btn:hover:after{transition:all .6s;left:150%}.bubbly-btn:active{transform:translateY(4px);box-shadow:0 2px #0000001f,0 4px 8px #00000014}.card-shadow{box-shadow:0 16px 32px -4px #4f46e51f,0 4px 12px #0000000d}.shine-card{position:relative;overflow:hidden}.shine-card:before{content:"";opacity:0;pointer-events:none;background:radial-gradient(circle,#fff6 0%,#0000 60%);width:200%;height:200%;transition:opacity .3s;position:absolute;top:-50%;left:-50%}.shine-card:hover:before{opacity:1}@keyframes gentleFloat{0%,to{transform:translateY(0)rotate(0)}50%{transform:translateY(-8px)rotate(1deg)}}.animate-float{animation:3s ease-in-out infinite gentleFloat}@keyframes pulseGlow{0%,to{opacity:.7;transform:scale(1)}50%{opacity:1;transform:scale(1.1)}}.animate-glow{animation:1.5s ease-in-out infinite pulseGlow}</style>
+  <script type="module" crossorigin src="/assets/index-BASlkoea.js"></script>
+</head>
+<body class="relative w-screen h-screen overflow-hidden">
+
+  <!-- 3D Canvas Container -->
+  <div id="canvas-container" class="absolute inset-0 z-0"></div>
+
+  <!-- Red Flash Overlay (Flashes when gate pushed back on wrong answer/timeout) -->
+  <div id="red-flash-overlay" class="pointer-events-none absolute inset-0 z-20 bg-red-500/20 opacity-0 transition-opacity duration-200"></div>
+
+  <!-- ========================================================================= -->
+  <!-- 1. HOMEPAGE / LEVEL SELECT MENU (White Light Colorful Playful Theme)     -->
+  <!-- ========================================================================= -->
+  <div id="homepage-screen" class="absolute inset-0 z-50 flex flex-col items-center justify-between p-4 sm:p-8 bg-gradient-to-b from-[#F0F7FF] via-[#E8F1FC] to-[#FDF8FE] overflow-y-auto">
+    
+    <!-- Floating Background Decorative Elements -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <div class="absolute top-10 left-10 text-5xl opacity-40 animate-float">☁️</div>
+      <div class="absolute top-24 right-16 text-6xl opacity-40 animate-float" style="animation-delay: 1.2s;">☁️</div>
+      <div class="absolute bottom-20 left-1/4 text-4xl opacity-30 animate-float" style="animation-delay: 2s;">🎈</div>
+      <div class="absolute top-1/3 right-1/4 text-4xl opacity-35 animate-float" style="animation-delay: 0.6s;">⭐</div>
+      <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-amber-200/40 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/2 right-0 w-80 h-80 bg-pink-200/30 rounded-full blur-3xl"></div>
+    </div>
+
+    <!-- Header / Logo -->
+    <div class="relative z-10 flex flex-col items-center text-center mt-2">
+      <div class="inline-flex items-center gap-2.5 px-4 py-1.5 rounded-full bg-white/90 border border-indigo-100 shadow-sm text-xs font-extrabold text-indigo-600 mb-2">
+        <span>✨ Fun Math Voice Adventure</span>
+      </div>
+      <h1 class="disney-font text-4xl sm:text-6xl text-slate-800 tracking-tight leading-none drop-shadow-sm flex items-center justify-center gap-2">
+        <span class="text-indigo-600">MATH</span>
+        <span class="text-amber-500">RUNNER</span>
+        <span class="text-emerald-500">3D</span>
+      </h1>
+      <p class="text-slate-500 text-xs sm:text-sm font-semibold mt-1">
+        Pronounce the answer out loud to slide through every gate! 🎤
+      </p>
+    </div>
+
+    <!-- Difficulty Picker (Easy, Medium, Hard) -->
+    <div class="relative z-10 w-full max-w-xl my-4">
+      <div class="text-center text-xs font-black uppercase tracking-wider text-slate-500 mb-2">
+        Select Difficulty
+      </div>
+      <div class="grid grid-cols-3 gap-2 p-1.5 bg-white/80 backdrop-blur-md rounded-2xl border border-indigo-100 shadow-sm">
+        <button id="diff-easy" class="diff-tab py-2 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 shadow-md bg-emerald-500 text-white">
+          <span>🌱</span>
+          <span>Easy</span>
+        </button>
+        <button id="diff-medium" class="diff-tab py-2 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 text-slate-600 hover:bg-slate-100">
+          <span>⚡</span>
+          <span>Medium</span>
+        </button>
+        <button id="diff-hard" class="diff-tab py-2 rounded-xl font-bold text-xs sm:text-sm transition-all flex items-center justify-center gap-1.5 text-slate-600 hover:bg-slate-100">
+          <span>🔥</span>
+          <span>Hard</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- 5 Arithmetic Operation Worlds (15 Questions Each) -->
+    <div class="relative z-10 w-full max-w-4xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 my-2">
+      
+      <!-- Level 0: Addition World -->
+      <div id="level-card-0" class="group cursor-pointer bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border-2 border-indigo-100 hover:border-indigo-400 card-shadow transition-all duration-200 hover:-translate-y-1">
+        <div class="flex items-center justify-between">
+          <span class="text-3xl p-2.5 rounded-2xl bg-indigo-50 border border-indigo-100">➕</span>
+          <span id="best-stars-0" class="text-xs font-black text-amber-500 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+            ⭐ Best: 0 / 15
+          </span>
+        </div>
+        <h3 class="disney-font text-xl text-slate-800 mt-3 group-hover:text-indigo-600 transition-colors">
+          Addition World
+        </h3>
+        <p class="text-xs text-slate-500 font-medium mt-0.5">
+          15 Fun Addition Puzzles
+        </p>
+        <div class="mt-3.5 flex items-center justify-between text-xs font-black text-indigo-600">
+          <span>Play 15 Questions</span>
+          <span class="group-hover:translate-x-1 transition-transform">➜</span>
+        </div>
+      </div>
+
+      <!-- Level 1: Subtraction Safari -->
+      <div id="level-card-1" class="group cursor-pointer bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border-2 border-emerald-100 hover:border-emerald-400 card-shadow transition-all duration-200 hover:-translate-y-1">
+        <div class="flex items-center justify-between">
+          <span class="text-3xl p-2.5 rounded-2xl bg-emerald-50 border border-emerald-100">➖</span>
+          <span id="best-stars-1" class="text-xs font-black text-amber-500 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+            ⭐ Best: 0 / 15
+          </span>
+        </div>
+        <h3 class="disney-font text-xl text-slate-800 mt-3 group-hover:text-emerald-600 transition-colors">
+          Subtraction Safari
+        </h3>
+        <p class="text-xs text-slate-500 font-medium mt-0.5">
+          15 Subtraction Challenges
+        </p>
+        <div class="mt-3.5 flex items-center justify-between text-xs font-black text-emerald-600">
+          <span>Play 15 Questions</span>
+          <span class="group-hover:translate-x-1 transition-transform">➜</span>
+        </div>
+      </div>
+
+      <!-- Level 2: Multiplication Land -->
+      <div id="level-card-2" class="group cursor-pointer bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border-2 border-amber-100 hover:border-amber-400 card-shadow transition-all duration-200 hover:-translate-y-1">
+        <div class="flex items-center justify-between">
+          <span class="text-3xl p-2.5 rounded-2xl bg-amber-50 border border-amber-100">✖️</span>
+          <span id="best-stars-2" class="text-xs font-black text-amber-500 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+            ⭐ Best: 0 / 15
+          </span>
+        </div>
+        <h3 class="disney-font text-xl text-slate-800 mt-3 group-hover:text-amber-600 transition-colors">
+          Multiplication Land
+        </h3>
+        <p class="text-xs text-slate-500 font-medium mt-0.5">
+          15 Times Tables Puzzles
+        </p>
+        <div class="mt-3.5 flex items-center justify-between text-xs font-black text-amber-600">
+          <span>Play 15 Questions</span>
+          <span class="group-hover:translate-x-1 transition-transform">➜</span>
+        </div>
+      </div>
+
+      <!-- Level 3: Division Kingdom -->
+      <div id="level-card-3" class="group cursor-pointer bg-white/95 backdrop-blur-md p-4 sm:p-5 rounded-3xl border-2 border-purple-100 hover:border-purple-400 card-shadow transition-all duration-200 hover:-translate-y-1">
+        <div class="flex items-center justify-between">
+          <span class="text-3xl p-2.5 rounded-2xl bg-purple-50 border border-purple-100">➗</span>
+          <span id="best-stars-3" class="text-xs font-black text-amber-500 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+            ⭐ Best: 0 / 15
+          </span>
+        </div>
+        <h3 class="disney-font text-xl text-slate-800 mt-3 group-hover:text-purple-600 transition-colors">
+          Division Kingdom
+        </h3>
+        <p class="text-xs text-slate-500 font-medium mt-0.5">
+          15 Division Missions
+        </p>
+        <div class="mt-3.5 flex items-center justify-between text-xs font-black text-purple-600">
+          <span>Play 15 Questions</span>
+          <span class="group-hover:translate-x-1 transition-transform">➜</span>
+        </div>
+      </div>
+
+      <!-- Level 4: All-Star Mixed -->
+      <div id="level-card-4" class="group cursor-pointer bg-gradient-to-br from-white to-amber-50/70 p-4 sm:p-5 rounded-3xl border-2 border-amber-200 hover:border-amber-400 card-shadow transition-all duration-200 hover:-translate-y-1 sm:col-span-2 lg:col-span-1">
+        <div class="flex items-center justify-between">
+          <span class="text-3xl p-2.5 rounded-2xl bg-amber-100 border border-amber-200">🌟</span>
+          <span id="best-stars-4" class="text-xs font-black text-amber-600 bg-amber-100 px-2.5 py-1 rounded-full border border-amber-300">
+            ⭐ Best: 0 / 15
+          </span>
+        </div>
+        <h3 class="disney-font text-xl text-slate-800 mt-3 group-hover:text-amber-600 transition-colors">
+          All-Star Mixed
+        </h3>
+        <p class="text-xs text-slate-500 font-medium mt-0.5">
+          15 Master Mixed Questions
+        </p>
+        <div class="mt-3.5 flex items-center justify-between text-xs font-black text-amber-600">
+          <span>Play 15 Questions</span>
+          <span class="group-hover:translate-x-1 transition-transform">➜</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Kid Friendly Rules Note -->
+    <div class="relative z-10 max-w-xl text-center text-xs text-slate-400 font-semibold mb-2">
+      💡 Infinite Chances! Wrong answers gently push the gate back so you can keep trying! 🚀
+    </div>
+
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- 2. IN-GAME HUD & OVERLAYS                                                -->
+  <!-- ========================================================================= -->
+  <div id="game-screen" class="hidden absolute inset-0 z-10 pointer-events-none flex flex-col justify-between p-4 sm:p-6">
+    
+    <!-- Top HUD Bar -->
+    <div class="pointer-events-auto flex items-center justify-between w-full max-w-4xl mx-auto bg-white/90 backdrop-blur-xl px-4 py-2.5 rounded-3xl border-2 border-indigo-100 shadow-xl">
+      
+      <!-- Back to Home -->
+      <button id="home-btn" class="bubbly-btn px-3 py-1.5 rounded-2xl bg-slate-100 text-slate-700 font-bold text-xs flex items-center gap-1.5 hover:bg-slate-200">
+        <span>🏠</span>
+        <span class="hidden sm:inline">Menu</span>
+      </button>
+
+      <!-- Level & Question Status -->
+      <div class="flex flex-col items-center">
+        <div class="flex items-center gap-1.5">
+          <span id="hud-level-title" class="disney-font text-sm sm:text-base text-slate-800">Addition World</span>
+          <span id="hud-diff-badge" class="text-[10px] font-bold text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200">EASY</span>
+        </div>
+        <div id="hud-question-progress" class="text-xs font-black text-indigo-600">
+          Question 1 / 15
+        </div>
+      </div>
+
+      <!-- Right Controls: Mic Wave, Stars & Keypad -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        
+        <!-- Live Mic Listening Button (Clickable to enable/resume mic anytime) -->
+        <button id="mic-status-btn" class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-xs font-extrabold text-indigo-600 hover:bg-indigo-100 transition-colors">
+          <div id="mic-sparkle" class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></div>
+          <span id="mic-label">🎤 Speak Answer</span>
+        </button>
+
+        <!-- Stars Counter -->
+        <div class="flex items-center gap-1 bg-amber-50 border border-amber-200 px-3 py-1 rounded-2xl text-amber-600 font-black text-sm">
+          <span>⭐</span>
+          <span id="hud-stars">0</span>
+        </div>
+
+        <!-- Sound Toggle -->
+        <button id="sound-btn" class="bubbly-btn w-9 h-9 rounded-2xl bg-slate-100 text-slate-700 flex items-center justify-center text-sm hover:bg-slate-200">
+          <span id="sound-emoji">🔊</span>
+        </button>
+
+        <!-- Keypad Fallback Toggle Button -->
+        <button id="keypad-toggle-btn" class="bubbly-btn w-9 h-9 rounded-2xl bg-indigo-500 text-white flex items-center justify-center text-sm shadow-md">
+          <span>⌨️</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Real-time Speech Toast ("Heard: 16 ⭐") -->
+    <div class="pointer-events-none flex flex-col items-center">
+      <div id="speech-toast" class="transition-opacity duration-300 opacity-0 px-4 py-2 rounded-2xl bg-white/95 backdrop-blur-lg border-2 border-indigo-200 shadow-2xl flex items-center gap-2">
+        <span class="text-xs font-extrabold text-slate-400 uppercase">Heard:</span>
+        <span id="speech-toast-val" class="disney-font text-lg text-indigo-600">"16"</span>
+        <span id="speech-toast-reaction" class="text-lg">⭐</span>
+      </div>
+    </div>
+
+    <!-- Virtual On-Screen Touch Numpad Drawer -->
+    <div id="keypad-drawer" class="pointer-events-auto absolute bottom-5 right-5 z-30 transition-all duration-300 transform translate-y-[130%] opacity-0 pointer-events-none">
+      <div class="bg-white/95 backdrop-blur-xl p-4 rounded-3xl border-2 border-indigo-200 shadow-2xl w-64 flex flex-col gap-2">
+        <div class="flex items-center justify-between px-1 text-xs text-indigo-600 font-black uppercase">
+          <span>Touch Keypad</span>
+          <button id="close-keypad" class="text-slate-400 hover:text-slate-700 text-base">&times;</button>
+        </div>
+
+        <!-- Input Box -->
+        <div class="flex items-center bg-slate-100 rounded-2xl px-3 py-1.5 border border-slate-200">
+          <input id="keypad-input" type="text" pattern="[0-9]*" placeholder="Type answer..." class="bg-transparent flex-1 text-indigo-600 font-mono text-lg font-black outline-none placeholder:text-slate-400 text-center" />
+          <button id="keypad-del" class="text-xs font-bold text-rose-500 hover:text-rose-600 px-1.5">⌫</button>
+        </div>
+
+        <!-- Touch Buttons -->
+        <div class="grid grid-cols-3 gap-1.5">
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">1</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">2</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">3</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">4</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">5</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">6</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">7</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">8</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">9</button>
+          <button id="keypad-clear" class="bubbly-btn h-10 rounded-2xl bg-rose-500 text-white font-bold text-xs">C</button>
+          <button class="numpad-btn bubbly-btn h-10 rounded-2xl bg-indigo-500 text-white font-black text-lg">0</button>
+          <button id="keypad-enter" class="bubbly-btn h-10 rounded-2xl bg-gradient-to-r from-emerald-500 to-teal-500 text-white font-black text-sm">GO 🚀</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Level Complete Celebration Modal (15/15 Solved!) -->
+    <div id="level-complete-modal" class="hidden pointer-events-auto absolute inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-md">
+      <div class="relative w-full max-w-sm bg-white rounded-3xl p-6 sm:p-8 border-4 border-amber-300 shadow-2xl text-center flex flex-col items-center">
+        <div class="text-5xl mb-2 animate-bounce">🏆</div>
+        <h2 class="disney-font text-3xl text-slate-800 leading-tight">Level Complete!</h2>
+        <p class="text-emerald-600 font-bold text-sm mt-0.5">All 15 Questions Solved! 🌟</p>
+
+        <div class="flex items-center justify-center gap-2 my-4 text-4xl">
+          <span>⭐</span><span>⭐</span><span>⭐</span>
+        </div>
+
+        <button id="next-level-btn" class="w-full py-3.5 rounded-2xl bubbly-btn bg-gradient-to-r from-emerald-500 to-teal-600 text-white disney-font text-lg shadow-lg flex items-center justify-center gap-2">
+          <span>Choose Next Level</span>
+          <span>➜</span>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Vite TypeScript Module Script -->
+</body>
+</html>
