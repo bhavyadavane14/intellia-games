@@ -43,7 +43,7 @@
       </a>
 
       <div class="game-header-right-group">
-        <a href="https://math-runner-murex.vercel.app/" target="_self" class="btn-external-play">
+        <a href="../play/math-runner/index.html" target="_self" class="btn-external-play">
           <span>Play Fullscreen</span>
           <span class="external-icon" aria-hidden="true">↗</span>
         </a>
@@ -94,41 +94,38 @@
         </div>
       </section>
 
-      <!-- Interactive Game Player / Launcher Arena -->
+      <!-- Interactive Game Player Arena -->
       <section class="game-player-section">
         <div class="game-player-frame-box">
           <div class="player-control-bar">
             <div class="player-status-badge">
               <span class="status-dot"></span>
-              <span>Game Station Ready</span>
+              <span>Game Active • Ready to Play</span>
             </div>
             <div class="player-actions">
               <a href="../index.html" class="btn-player-back theme-purple" aria-label="Back to Games">
                 <span class="back-arrow-icon" aria-hidden="true">←</span>
                 <span>Back to Games</span>
               </a>
+              <button type="button" class="btn-player-action" id="fullscreenToggleBtn" onclick="toggleIframeFullscreen()">
+                <span>⛶ Expand Player</span>
+              </button>
             </div>
           </div>
 
-          <!-- Interactive Arcade Launcher Stage -->
-          <div class="game-launcher-stage">
+          <!-- Embedded Game Player -->
+          <div class="game-iframe-wrapper" id="iframeWrapper">
             <!-- Small floating back button on top of game -->
             <a href="../index.html" class="floating-back-btn theme-purple" aria-label="Back to Games Arcade" title="Back to Games Arcade">
               <span class="back-arrow-icon" aria-hidden="true">←</span>
               <span>Back</span>
             </a>
-            <img src="../assets/games/math-runner.jpg" alt="Math Runner 3D Gameplay" class="launcher-bg-img">
-            <div class="launcher-overlay-card">
-              <span class="launcher-icon">🏃‍♂️</span>
-              <h2 class="launcher-title">Math Runner 3D</h2>
-              <p class="launcher-desc">
-                Launch directly into the 3D arithmetic playground! Run, react, and pick the correct mathematical gates to achieve high scores.
-              </p>
-              <a href="https://math-runner-murex.vercel.app/" target="_self" class="btn-launch-game">
-                <span>LAUNCH GAME NOW</span>
-                <span aria-hidden="true">→</span>
-              </a>
-            </div>
+            <iframe src="../play/math-runner/index.html" 
+                    class="game-iframe" 
+                    id="gameIframe"
+                    title="Math Runner 3D Game"
+                    allow="fullscreen; autoplay; gamepad; microphone">
+            </iframe>
           </div>
         </div>
       </section>
