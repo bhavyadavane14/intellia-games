@@ -1,14 +1,6 @@
 {
   "version": 2,
   "cleanUrls": true,
-  "headers": [
-    {
-      "source": "/play/(.*)",
-      "headers": [
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" }
-      ]
-    }
-  ],
   "rewrites": [
     { "source": "/clock-station", "destination": "/games/clock-station.html" },
     { "source": "/math-runner", "destination": "/games/math-runner.html" },
