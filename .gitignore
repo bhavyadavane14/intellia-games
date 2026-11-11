@@ -18,3 +18,18 @@ yarn-error.log*
 # Node modules (if any tools are added later)
 node_modules/
 dist/
+
+# Python scripts & virtual environments (project is 100% HTML/CSS/JS)
+*.py
+*.pyc
+__pycache__/
+venv/
+.venv/
+
+# Playwright & test files
+.playwright-mcp/
+test*
+*.test.*
+test_*/
+tests/
+
